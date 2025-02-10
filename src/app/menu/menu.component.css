@@ -1,0 +1,43 @@
+:host {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  width: 100%;
+  height: 100vh; 
+  text-align: center;
+  border: 2px solid;
+  background-image: url(https://media.istockphoto.com/id/1460755337/photo/white-color-theme-modern-style-office-with-exposed-concrete-floor-and-a-lot-of-plant-3d.jpg?s=1024x1024&w=is&k=20&c=-G_7gtguYmk3uuYxxfBfCTbL0wulw0izJnUs6gW6iwE=); 
+  background-size: cover;
+  background-position: center;
+  height: 100%; 
+
+
+}
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items:center;
+  text-align: center;
+  width: 100%;
+ 
+}
+.menu-text {
+  font-size: 45px;
+  margin-bottom: 20px; 
+  color: #279ac1;
+}
+.buttons {
+  display: flex;
+  gap: 20px;  
+}
+
+
+
+
+
+
+/* background-image: url(https://media.istockphoto.com/id/1460755337/photo/white-color-theme-modern-style-office-with-exposed-concrete-floor-and-a-lot-of-plant-3d.jpg?s=1024x1024&w=is&k=20&c=-G_7gtguYmk3uuYxxfBfCTbL0wulw0izJnUs6gW6iwE=); 
+  background-size: cover;
+  background-position: center;
+  height: 60%; */

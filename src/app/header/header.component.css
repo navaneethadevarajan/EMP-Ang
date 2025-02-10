@@ -1,0 +1,18 @@
+/* header.component.css */
+.header-container {
+    display: grid;
+    place-items: center;
+    height: 100px; /* You can adjust this depending on your design */
+    background-color: #97cebe; /* Change the background color if needed */
+    color: rgb(31, 29, 29);
+    font-family: Arial, sans-serif;
+    border: 2px solid;    
+  }
+  
+  .header-title {
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  

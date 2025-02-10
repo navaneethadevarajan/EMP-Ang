@@ -1,0 +1,38 @@
+<h2 mat-dialog-title>{{ employee.employeeId ? 'Edit Employee' : 'Add Employee' }}</h2>
+<mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Employee Name</mat-label>
+    <input matInput [(ngModel)]="employee.employeeName" required />
+  </mat-form-field>
+  <br><br>
+  <mat-form-field appearance="fill">
+    <mat-label>Employee Age</mat-label>
+    <input matInput [(ngModel)]="employee.employeeAge" required />
+  </mat-form-field>
+  <br><br>
+  <mat-form-field appearance="fill">
+    <mat-label>Employee Location</mat-label>
+    <input matInput [(ngModel)]="employee.employeeLocation" required />
+  </mat-form-field>
+  <br><br>
+  <mat-form-field appearance="fill">
+    <mat-label>Employee DateOfBirth</mat-label>
+    <input matInput [matDatepicker]="picker" [(ngModel)]="employee.employeeDateOfBirth" required />
+    <mat-datepicker #picker></mat-datepicker>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  </mat-form-field>
+  
+  <br><br>
+  <mat-form-field appearance="fill">
+    <mat-label>Department ID</mat-label>
+    <mat-select [(ngModel)]="employee.departmentId" required>
+      <mat-option *ngFor="let department of departments" [value]="department.departmentID">
+        {{ department.departmentName }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button (click)="onSave()">Save</button>
+</mat-dialog-actions>

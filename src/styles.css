@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+/* AG Grid CSS */
+/* html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
+/* Apply overflow: hidden globally */
+body, html {
+    overflow: hidden;
+    height: 100%;
+  }
+  

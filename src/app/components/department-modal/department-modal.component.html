@@ -1,0 +1,14 @@
+<!--<p>department-modal works!</p>-->
+<h2 mat-dialog-title>{{ department.departmentID ? 'Edit Department' : 'Add Department' }}</h2>
+<mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Department Name</mat-label>
+    <input matInput [(ngModel)]="department.departmentName" required />
+  </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button (click)="onSave()">Save</button>
+</mat-dialog-actions>
+
