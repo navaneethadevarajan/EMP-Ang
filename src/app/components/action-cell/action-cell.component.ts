@@ -3,8 +3,7 @@ import { ICellRendererParams,} from 'ag-grid-community';
 
 @Component({
   selector: 'app-action-cell',
-  standalone: false,
-  
+standalone:false,  
   templateUrl: `./action-cell.component.html`,
   styleUrl: './action-cell.component.css'
 })

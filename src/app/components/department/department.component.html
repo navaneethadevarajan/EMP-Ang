@@ -1,12 +1,14 @@
 <div class="main">
   <!-- employee.component.html -->
-  <div class="backmenu">
-    <app-backtomenu></app-backtomenu>
-  </div>
-  <div class="button">
-    <button mat-icon-button (click)="openDepartmentModal()">
-      <mat-icon>add</mat-icon> 
-    </button>
+  <div class="maticons">
+    <div class="backmenu">
+      <app-backtomenu></app-backtomenu>
+    </div>
+    <div class="button">
+      <button mat-icon-button (click)="openDepartmentModal()">
+        <mat-icon>add</mat-icon> 
+      </button>
+    </div>
   </div>
   <div class="department-grid-container">
     <ag-grid-angular
@@ -15,7 +17,7 @@
       [gridOptions]="gridOptions"
       [domLayout]="'autoHeight'"
       class="ag-theme-balham"
-       style="width: 100%; height: 100%;"
+       style="width: 40%; height: 100%;"
     ></ag-grid-angular>
   </div>
 </div>

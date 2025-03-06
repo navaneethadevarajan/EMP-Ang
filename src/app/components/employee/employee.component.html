@@ -1,22 +1,23 @@
-<!--<p>employee works!</p>-->
+<div class="maticons">
 <div class="backmenu">
-<app-backtomenu ></app-backtomenu>
-</div>
-<div class="button">
-<button mat-icon-button (click)="openEmployeeModal()" >
-  <mat-icon>add</mat-icon> Add Employee
-  </button> 
-</div> 
-  <div *ngIf="employees.length > 0" >
-    <div class="employee-grid-container">
-    <ag-grid-angular
-      style="width: 100%;height: 100%;"
-      class="ag-theme-balham grid-item"
-      [rowData]="employees"
-      [columnDefs]="columnDefs"
-      [gridOptions]="gridOptions">
-    </ag-grid-angular>
+  <app-backtomenu ></app-backtomenu>
   </div>
-</div>
-  
+  <div class="button">
+  <button mat-icon-button (click)="openEmployeeModal()" >
+    <mat-icon>add</mat-icon> 
+    </button> 
+  </div>
+  </div> 
+    <div *ngIf="employees.length > 0" >
+      <div class="employee-grid-container">
+      <ag-grid-angular
+        style="width: 90%;height: 100%;"
+        class="ag-theme-balham grid-item"
+        [rowData]="employees"
+        [columnDefs]="columnDefs"
+        [gridOptions]="gridOptions"
+        >
+      </ag-grid-angular>
+    </div>
+  </div>
   

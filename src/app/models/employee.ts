@@ -1,9 +1,10 @@
 export class Employee {
-    employeeId!: number;
+    employeeId?: number;
     employeeName!: string;
     employeeAge!: number;
     employeeLocation!: string;
     employeeDateOfBirth!: Date;
     departmentId!: number;
-    departmentName!: string;
+    departmentName?: string;
+    fileName?: string;
   }

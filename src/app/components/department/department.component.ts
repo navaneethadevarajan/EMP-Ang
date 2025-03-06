@@ -19,10 +19,10 @@ export class DepartmentComponent implements OnInit {
   message: string = '';
   
   columnDefs: ColDef[] = [
-    { headerName: 'Department ID', field: 'departmentID' },
-    { headerName: 'Department Name', field: 'departmentName' },
+    { headerName: 'DEPARTMENT ID', field: 'departmentID' },
+    { headerName: 'DEPARTMENT NAME', field: 'departmentName' },
     {
-      headerName: 'Actions',
+      headerName: 'ACTIONS',
       field: 'actions',
       width: 100,
       cellRenderer: 'actionCellRenderer',
@@ -31,8 +31,9 @@ export class DepartmentComponent implements OnInit {
     
   ];
   gridOptions: GridOptions = {
-    theme:themeBalham,
-    rowHeight: 40,
+    theme:themeQuartz,
+    headerHeight:45,
+    rowHeight: 35,
     rowModelType: 'clientSide',  
     pagination: true,            
     paginationPageSize: 10,      

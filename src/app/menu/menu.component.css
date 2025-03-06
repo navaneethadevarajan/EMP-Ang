@@ -1,17 +1,26 @@
 :host {
   display: flex;
-  justify-content: center; 
+  flex-direction: column;
+  justify-content: center; /* Center items vertically */
   align-items: center;
   width: 100%;
-  height: 100vh; 
+  height: 100vh; /* Full viewport height */
   text-align: center;
-  border: 2px solid;
-  background-image: url(https://media.istockphoto.com/id/1460755337/photo/white-color-theme-modern-style-office-with-exposed-concrete-floor-and-a-lot-of-plant-3d.jpg?s=1024x1024&w=is&k=20&c=-G_7gtguYmk3uuYxxfBfCTbL0wulw0izJnUs6gW6iwE=); 
+  position: relative;
+}
+
+:host::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background-image: url(https://media.istockphoto.com/id/1460755337/photo/white-color-theme-modern-style-office-with-exposed-concrete-floor-and-a-lot-of-plant-3d.jpg?s=1024x1024&w=is&k=20&c=-G_7gtguYmk3uuYxxfBfCTbL0wulw0izJnUs6gW6iwE=); 
   background-size: cover;
   background-position: center;
-  height: 100%; 
-
-
+  filter: blur(5px); 
+  z-index: -1;} */
 }
 .menu-container {
   display: flex;
@@ -25,7 +34,8 @@
 .menu-text {
   font-size: 45px;
   margin-bottom: 20px; 
-  color: #279ac1;
+  color: #291991;
+  margin-top: -150px;
 }
 .buttons {
   display: flex;
