@@ -30,7 +30,10 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerToggle } from '@angular/material/datepicker';
-
+import { MatMenuModule } from '@angular/material/menu';
+import { ViewFileComponent } from './components/view-file/view-file.component';
+import { ViewFileCellRendererComponent } from './components/view-file-cell-renderer/view-file-cell-renderer.component';
+import { SafeUrlPipe } from './safe-url.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,13 +41,14 @@ import { MatDatepickerToggle } from '@angular/material/datepicker';
     EmployeeComponent,
     ActionCellComponent,
     DepartmentModalComponent,
-    EmployeemodalComponent,
     HeaderComponent,
     FooterComponent,
     MenuComponent,
     BacktomenuComponent,
-    
- 
+    EmployeemodalComponent,
+    ViewFileComponent,
+    SafeUrlPipe,
+    ViewFileCellRendererComponent
   ],
   imports: [
     BrowserModule,
@@ -64,14 +68,19 @@ import { MatDatepickerToggle } from '@angular/material/datepicker';
     MatDatepickerModule,
     MatNativeDateModule,
     MatSelectModule,
-    MatDatepickerToggle
+    MatDatepickerToggle,
+    MatMenuModule,
+    
+    
+
   ],
   providers: [
     provideHttpClient(withInterceptorsFromDi()),
     provideAnimationsAsync(),
    
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+
 })
 export class AppModule {
   constructor() {

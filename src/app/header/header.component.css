@@ -3,8 +3,8 @@
     display: grid;
     place-items: center;
     height: 100px; /* You can adjust this depending on your design */
-    background-color: #97cebe; /* Change the background color if needed */
-    color: rgb(31, 29, 29);
+    background-color: #1a191b; /* Change the background color if needed */
+    color: rgb(245, 242, 242);
     font-family: Arial, sans-serif;
     border: 2px solid;    
   }
