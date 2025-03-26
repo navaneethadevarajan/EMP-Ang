@@ -137,6 +137,13 @@ export class ApiService {
   getemployeeById(employeeId: number): Observable<any> {
     return this.http.get(`${this.apiUrl}/GetEmployeeById/${employeeId}`);
   }
+  getEmployeeFile(employeeId: number): Observable<any> {
+    return this.http.get<{ fileUrl: string }>(`${this.apiUrl}/GetEmployeeFile/${employeeId}`);
+  }
+  
+  getBackendVersion(): Observable<{ version: string }> {
+    return this.http.get<{ version: string }>(`${this.apiUrl}/api/version`);
+  }
   
   
 }

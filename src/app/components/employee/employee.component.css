@@ -7,6 +7,7 @@
   height: 100vh; 
   text-align: left;
   position: relative;
+  background-color: rgb(110, 158, 188);
 }
 
 :host::before {

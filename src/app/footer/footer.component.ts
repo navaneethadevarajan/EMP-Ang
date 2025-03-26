@@ -5,7 +5,7 @@ import { VersionService } from '../services/version.service';
   standalone: false,
   
   templateUrl: './footer.component.html',
-  styleUrl: './footer.component.css'
+  styleUrls: ['./footer.component.css']
 })
 export class FooterComponent {
   version: string;

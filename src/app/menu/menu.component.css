@@ -1,10 +1,10 @@
 :host {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Center items vertically */
+  justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100vh; /* Full viewport height */
+  height: 100vh;
   text-align: center;
   position: relative;
 }
@@ -16,38 +16,52 @@
   left: 0;
   width: 100%;
   height: 100%;
-  /* background-image: url(https://media.istockphoto.com/id/1460755337/photo/white-color-theme-modern-style-office-with-exposed-concrete-floor-and-a-lot-of-plant-3d.jpg?s=1024x1024&w=is&k=20&c=-G_7gtguYmk3uuYxxfBfCTbL0wulw0izJnUs6gW6iwE=); 
+  /* background-image: url("https://media.istockphoto.com/vectors/global-network-connectionsocial-media-network-vector-illustration-vector-id1144280890?k=6&m=1144280890&s=612x612&w=0&h=R-4-C3nNOuNYVlq5dY3zHco5O8zBM1yaoJO2Yz-FR2k="); */
+  background-image: url("https://exela.co.uk/wp-content/uploads/2023/06/AdobeStock_203935257.jpeg");
   background-size: cover;
   background-position: center;
-  filter: blur(5px); 
-  z-index: -1;} */
+  z-index: -1;
 }
+
 .menu-container {
   display: flex;
   flex-direction: column;
-  justify-content: center; 
-  align-items:center;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  width: 100%;
- 
+  width: 40%;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.2); /* Transparent background */
+  backdrop-filter: blur(10px); /* Blurred effect */
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  margin-left: 50%;
+  margin-bottom: 10%;
+  
 }
+
 .menu-text {
-  font-size: 45px;
-  margin-bottom: 20px; 
-  color: #291991;
-  margin-top: -150px;
+  font-size: 38px;
+  margin-bottom: 20px;
+  color: #042e81;
 }
+
 .buttons {
   display: flex;
-  gap: 20px;  
+  gap: 20px;
 }
 
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #0b237b;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
-
-
-
-
-/* background-image: url(https://media.istockphoto.com/id/1460755337/photo/white-color-theme-modern-style-office-with-exposed-concrete-floor-and-a-lot-of-plant-3d.jpg?s=1024x1024&w=is&k=20&c=-G_7gtguYmk3uuYxxfBfCTbL0wulw0izJnUs6gW6iwE=); 
-  background-size: cover;
-  background-position: center;
-  height: 60%; */
+button:hover {
+  background-color: #f0f0f0;
+}
