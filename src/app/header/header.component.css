@@ -1,18 +1,29 @@
-/* header.component.css */
 .header-container {
-    display: grid;
-    place-items: center;
-    height: 100px; /* You can adjust this depending on your design */
-    background-color: #1a191b; /* Change the background color if needed */
-    color: rgb(245, 242, 242);
-    font-family: Arial, sans-serif;
-    border: 2px solid;    
-  }
-  
-  .header-title {
-    font-size: 50px;
-    font-weight: bold;
-    text-align: center;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  background: linear-gradient(135deg, #052068, #081865);
+  color: #fff;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 0 20px; /* Add padding to prevent elements from sticking to the edge */
+}
 
-  
+.logo {
+  height: 50px; /* Adjust as needed */
+  width: auto;
+  margin-right: 15px; /* Adds space between logo and title */
+}
+
+.header-title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.header-version
+{
+margin-left:65% ;
+font-size: 14px;
+}
+
