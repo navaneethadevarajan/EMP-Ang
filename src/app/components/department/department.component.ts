@@ -77,7 +77,6 @@ export class DepartmentComponent implements OnInit {
   }
   OnDelete(departmentID: number): void {
     debugger;
-    //if (confirm('Are you sure you want to delete this department?')) {
       this.apiService.removeDepartmentById(departmentID).subscribe({
         next: () => {
           console.log('Department deleted:', departmentID);
@@ -87,7 +86,7 @@ export class DepartmentComponent implements OnInit {
           console.error('Error deleting department:', err);
         }
       });
-    //}
+    
   }
  
 }

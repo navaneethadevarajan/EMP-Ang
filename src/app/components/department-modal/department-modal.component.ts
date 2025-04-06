@@ -44,7 +44,7 @@ export class DepartmentModalComponent {
         });
       }
     }
-    onCancel(): void {
-      this.dialogRef.close();
-    }
+  onCancel(): void {
+    this.dialogRef.close();
+  }
 }

@@ -46,6 +46,5 @@ export class ViewFileCellRendererComponent implements ICellRendererAngularComp {
       width: '600px',
       data: { employeeId, fileName }
     });
-  }
-  
+  } 
 }

@@ -29,10 +29,10 @@ export class HeaderComponent implements OnInit {
   constructor(private versionService: VersionService) {}
 
   ngOnInit() {
-    // Get frontend version
+    // frontend version
     this.frontendVersion = this.versionService.getVersion();
 
-    // Get backend version
+    // backend version
     this.versionService.getBackendVersion().subscribe({
       next: (response) => {
         this.backendVersion = response.version;
