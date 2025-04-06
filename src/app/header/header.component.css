@@ -7,13 +7,13 @@
   color: #fff;
   font-family: Arial, sans-serif;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  padding: 0 20px; /* Add padding to prevent elements from sticking to the edge */
+  padding: 0 20px;
 }
 
 .logo {
-  height: 50px; /* Adjust as needed */
+  height: 50px;
   width: auto;
-  margin-right: 15px; /* Adds space between logo and title */
+  margin-right: 15px;
 }
 
 .header-title {

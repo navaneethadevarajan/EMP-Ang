@@ -34,6 +34,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { ViewFileComponent } from './components/view-file/view-file.component';
 import { ViewFileCellRendererComponent } from './components/view-file-cell-renderer/view-file-cell-renderer.component';
 import { SafeUrlPipe } from './safe-url.pipe';
+import { JwtInterceptor } from './services/jwt.inceptor';
+import { AuthService } from './services/auth.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,6 +51,7 @@ import { SafeUrlPipe } from './safe-url.pipe';
     ViewFileComponent,
     SafeUrlPipe,
     ViewFileCellRendererComponent
+
   ],
   imports: [
     BrowserModule,
@@ -75,6 +78,9 @@ import { SafeUrlPipe } from './safe-url.pipe';
 
   ],
   providers: [
+    AuthService,
+    JwtInterceptor,
+
     provideHttpClient(withInterceptorsFromDi()),
     provideAnimationsAsync(),
    

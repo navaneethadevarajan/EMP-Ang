@@ -16,7 +16,6 @@
   left: 0;
   width: 100%;
   height: 100%;
-  /* background-image: url("https://media.istockphoto.com/vectors/global-network-connectionsocial-media-network-vector-illustration-vector-id1144280890?k=6&m=1144280890&s=612x612&w=0&h=R-4-C3nNOuNYVlq5dY3zHco5O8zBM1yaoJO2Yz-FR2k="); */
   background-image: url("https://exela.co.uk/wp-content/uploads/2023/06/AdobeStock_203935257.jpeg");
   background-size: cover;
   background-position: center;
@@ -31,8 +30,8 @@
   text-align: center;
   width: 40%;
   padding: 30px;
-  background: rgba(255, 255, 255, 0.2); /* Transparent background */
-  backdrop-filter: blur(10px); /* Blurred effect */
+  background: rgba(255, 255, 255, 0.2); 
+  backdrop-filter: blur(10px); 
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   margin-left: 50%;

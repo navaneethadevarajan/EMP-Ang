@@ -10,13 +10,11 @@ import { Router } from '@angular/router';
 export class MenuComponent {
   constructor(private router: Router) {}
 
-  // Navigate to the Employee CRUD page
   goToEmployee() {
-    this.router.navigate(['/employee']); // Ensure the correct route for Employee page
+    this.router.navigate(['/employee']); 
   }
 
-  // Navigate to the Department CRUD page
   goToDepartment() {
-    this.router.navigate(['/department']); // Ensure the correct route for Department page
+    this.router.navigate(['/department']); 
   }
 }

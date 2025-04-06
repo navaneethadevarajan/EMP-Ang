@@ -64,11 +64,6 @@ export class ApiService {
     return this.http.post(`${this.apiUrl}/CreateEmployee`, employee);
   }
 
-  // updateEmployee(employeeId: number, employee: Employee): Observable<any> {
-  //   return this.http.put(`${this.apiUrl}/UpdateEmployeeById/${employeeId}`, employee, {
-  //     headers: { 'Content-Type': 'application/json' }
-  //   });
-  // }
   updateEmployee(employeeId: number, employee: Employee, file?: File): Observable<any> {
     const formData = new FormData();
     
@@ -94,33 +89,6 @@ export class ApiService {
     return this.http.delete(`${this.apiUrl}/RemoveEmployeeById?employeeId=${employeeId}`);
   }
   
-  // uploadFile(employeeId: number, file: File): Observable<any> {
-  //   if (!employeeId) {
-  //     console.error(" Employee ID is undefined or null!");
-  //     return throwError(() => new Error("Employee ID is required"));
-  //   }
-  
-  //   const formData = new FormData();
-  //   formData.append("file", file);
-  
-  //   console.log(`Uploading file for Employee ID: ${employeeId}`);
-  
-  //   return this.http.post(`${this.apiUrl}/UploadEmployeeFile/${employeeId}`, formData);
-  // }
-  // uploadFile(employeeId: number, file: File): Observable<any> {
-  //   if (!employeeId) {
-  //     console.error(" Employee ID is undefined or null!");
-  //     return throwError(() => new Error("Employee ID is required"));
-  //   }
-  
-  //   const formData = new FormData();
-  //   formData.append("file", file); // Ensure "file" key matches backend
-  
-  //   console.log(`Uploading file for Employee ID: ${employeeId}`);
-  
-  //   return this.http.post(`${this.apiUrl}/UploadEmployeeFile/${employeeId}`, formData, {
-  //   });
-  // }
   uploadFile(employeeId: number, file: File): Observable<any> {
     const formData = new FormData();
     formData.append("file", file); 
@@ -129,7 +97,7 @@ export class ApiService {
     console.log(" FormData Contents:", formData.get("file"));
   
     return this.http.post(`${this.apiUrl}/UploadEmployeeFile/${employeeId}`, formData, {
-      headers: new HttpHeaders({ "enctype": "multipart/form-data" }), // Add header explicitly
+      headers: new HttpHeaders({ "enctype": "multipart/form-data" }), 
       reportProgress: true,
       observe: "events",
     });
@@ -144,6 +112,5 @@ export class ApiService {
   getBackendVersion(): Observable<{ version: string }> {
     return this.http.get<{ version: string }>(`${this.apiUrl}/api/version`);
   }
-  
   
 }
