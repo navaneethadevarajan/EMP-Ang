@@ -1,0 +1,57 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    /* background-color: #f4f4f4; */
+    background-image: url("https://exela.co.uk/wp-content/uploads/2023/06/AdobeStock_203935257.jpeg");
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    /* border: red 2px solid; */
+  }
+  
+  form {
+    
+    background-color: white;
+    /* color: white; */
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    width: 300px;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 12px 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+  
+  .loginButton {
+    width: 100%;
+    padding: 12px;
+    background-color: #001c61; 
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .loginButton:hover {
+    background-color: #003399;
+  }
+  
+  .error {
+    margin-top: 10px;
+    color: red;
+    text-align: center;
+    font-size: 14px;
+  }
+  

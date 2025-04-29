@@ -34,8 +34,15 @@ import { MatMenuModule } from '@angular/material/menu';
 import { ViewFileComponent } from './components/view-file/view-file.component';
 import { ViewFileCellRendererComponent } from './components/view-file-cell-renderer/view-file-cell-renderer.component';
 import { SafeUrlPipe } from './safe-url.pipe';
-import { JwtInterceptor } from './services/jwt.inceptor';
 import { AuthService } from './services/auth.service';
+import { LoginComponent } from './login/login.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JwtInterceptor } from './services/jwt.interceptor';
+import { UserComponent } from './components/user/user.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { UnauthorizedDialogComponent } from './components/unauthorized-dialog/unauthorized-dialog.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,7 +57,10 @@ import { AuthService } from './services/auth.service';
     EmployeemodalComponent,
     ViewFileComponent,
     SafeUrlPipe,
-    ViewFileCellRendererComponent
+    ViewFileCellRendererComponent,
+    LoginComponent,
+    UserComponent,
+    UnauthorizedDialogComponent
 
   ],
   imports: [
@@ -73,18 +83,27 @@ import { AuthService } from './services/auth.service';
     MatSelectModule,
     MatDatepickerToggle,
     MatMenuModule,
+    BrowserModule,
+    BrowserAnimationsModule, // Required for toast animations
+    ToastrModule.forRoot({
+      timeOut: 3000,
+      positionClass: 'toast-top-right',
+      preventDuplicates: true,
+    }),
+    MatSnackBarModule,
     
-    
-
   ],
   providers: [
     AuthService,
-    JwtInterceptor,
-
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptor,
+      multi: true
+    },
     provideHttpClient(withInterceptorsFromDi()),
-    provideAnimationsAsync(),
-   
+    provideAnimationsAsync()
   ],
+  
   bootstrap: [AppComponent],
 
 })

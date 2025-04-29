@@ -1,4 +1,4 @@
-<!-- <p>header works!</p> -->
+<!-- <p>header works!</p>
 <div class="header-container">
   <img src="https://static.vecteezy.com/system/resources/previews/020/397/532/large_2x/ems-letter-logo-design-on-white-background-ems-creative-circle-letter-logo-concept-ems-letter-design-vector.jpg" alt="EMS Logo" class="logo">
   
@@ -12,7 +12,35 @@
     API version: {{ backendVersion }}
   </div>
 </div>
+ -->
+ <div class="header-container">
+  <img src="https://static.vecteezy.com/system/resources/previews/020/397/532/large_2x/ems-letter-logo-design-on-white-background-ems-creative-circle-letter-logo-concept-ems-letter-design-vector.jpg" alt="EMS Logo" class="logo">
+  
+  <div class="header-title">
+    EMPLOYEE 360
+  </div>
 
+  <div class="header-version">
+    App version: {{ frontendVersion }} <br>
+    API version: {{ backendVersion }}
+  </div>
 
+  <div class="auth-section">
+    <ng-container *ngIf="authService.isLoggedIn(); else loginLink">
+      <!-- Optional: Admin badge -->
+      <span *ngIf="authService.isAdmin()" class="admin-label">
+        (Admin)
+      </span>
+      
+      <button (click)="logout()" class="logout-btn">Logout</button>
+    </ng-container>
 
- 
+    <!-- <ng-template #loginLink>
+      <a routerLink="/login" class="login-link"  style="color: rgb(46, 26, 125) !important;">Login</a>
+    </ng-template> -->
+    <ng-template #loginLink>
+      <button routerLink="/login" class="styled-login-button">LOGIN</button>
+    </ng-template>
+    
+  </div>
+</div>

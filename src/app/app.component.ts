@@ -8,16 +8,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'EmployeeManagementSystemAngular';
-//  selectedSection: string = ''; 
- 
-//  onBackToMenu() {
-//   this.selectedSection = ''; // Reset the selected section to show the main menu
-// }
 
-//   /*onMenuButtonClick(section: string) {
-//     this.selectedSection = section;}
-// }*/
-// onMenuSelection(section: string) {
-//   this.selectedSection = section;
-// }
 }

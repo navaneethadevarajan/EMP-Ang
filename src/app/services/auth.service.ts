@@ -1,31 +1,78 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
+import * as CryptoJS from 'crypto-js';
+import {jwtDecode} from 'jwt-decode';
 import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = environment.apiUrl + '/auth'; // Adjust based on your backend API
-
-  constructor(private http: HttpClient, private router: Router) {}
-
-  login(credentials: any) {
-    return this.http.post(`${this.apiUrl}/login`, credentials);
+  private secretKey = environment.secretKey; 
+  constructor() {
+    console.log('secret key:',this.secretKey);
+    this.testEncryptDecrypt();
+  }
+  
+  private encryptToken(token: string): string {
+    return CryptoJS.AES.encrypt(token, this.secretKey).toString();
   }
 
-  logout() {
-    localStorage.removeItem('token');
-    this.router.navigate(['/login']);
+  private decryptToken(encryptedToken: string): string {
+    console.log('Encrypted Token:', encryptedToken);
+    try{
+    const bytes = CryptoJS.AES.decrypt(encryptedToken, this.secretKey);
+  
+    const decrypted = bytes.toString(CryptoJS.enc.Utf8);
+    console.log('Decrypted Token:', decrypted);
+    return bytes.toString(CryptoJS.enc.Utf8);
+  } catch (error) {
+      console.error('Decryption error:', error);
+      return '';
+    }
   }
-
-  isAuthenticated(): boolean {
-    const token = localStorage.getItem('token');
-    return !!token;
+  setToken(token: string): void {
+    const encryptedToken = this.encryptToken(token);
+    console.log('Encrypted Token in settoken', encryptedToken);
+    localStorage.setItem('token', encryptedToken);
   }
 
   getToken(): string | null {
-    return localStorage.getItem('token');
+    const encryptedToken = localStorage.getItem('token');
+    if (!encryptedToken) return null;
+
+    const decryptedToken = this.decryptToken(encryptedToken);
+    return decryptedToken|| null;
+  }
+
+  getRole(): string | null {
+    const token = this.getToken();
+    if (!token) return null;
+
+    try {
+      const decoded: any = jwtDecode(token);
+      return decoded?.role || null;
+    } catch (error) {
+      console.error('Token decode failed', error);
+      return null;
+    }
+  }
+
+  isAdmin(): boolean {
+    return this.getRole() === 'admin';
+  }
+
+  isLoggedIn(): boolean {
+    return !!this.getToken();
+  }
+
+  logout(): void {
+    localStorage.clear();
+  }
+  testEncryptDecrypt(): void {
+    const test:string = 'Hello, World!';
+    const encrypted=CryptoJS.AES.encrypt(test, this.secretKey).toString();
+    console.log('Encrypted:', encrypted);
+    const decrypted = CryptoJS.AES.decrypt(encrypted, this.secretKey).toString(CryptoJS.enc.Utf8);
+    console.log('Decrypted:', decrypted);
   }
 }
