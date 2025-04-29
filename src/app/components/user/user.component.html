@@ -1,0 +1,17 @@
+<div class="main">
+    <!-- employee.component.html -->
+    <div class="maticons">
+      <div class="backmenu">
+        <app-backtomenu></app-backtomenu>
+      </div>
+    </div>
+    <div class="user-grid-container">
+      <ag-grid-angular
+        [rowData]="rowData"
+        [columnDefs]="columnDefs"
+        [domLayout]="'autoHeight'"
+        class="ag-theme-balham"
+         style="width: 40%; height: 100%;"
+      ></ag-grid-angular>
+    </div>
+  </div>

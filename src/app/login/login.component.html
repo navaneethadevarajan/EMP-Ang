@@ -1,0 +1,10 @@
+<!-- <p>login works!</p> -->
+<div class="login-container">
+    <form (ngSubmit)="onLogin()">
+      <input type="text" placeholder="Username" [(ngModel)]="loginData.username" name="username" required />
+      <input type="password" placeholder="Password" [(ngModel)]="loginData.password" name="password" required />
+      <button type="submit" class="loginButton">Login</button>
+      <p *ngIf="loginFailed" class="error">Invalid credentials</p>
+    </form>
+  </div>
+  

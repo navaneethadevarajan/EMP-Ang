@@ -6,6 +6,7 @@ import { throwError } from 'rxjs';
 import { Department } from '../models/department';
 import { Employee } from '../models/employee';
 import { environment } from '../../environments/environment';
+import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root',
@@ -66,7 +67,6 @@ export class ApiService {
 
   updateEmployee(employeeId: number, employee: Employee, file?: File): Observable<any> {
     const formData = new FormData();
-    
     formData.append("employeeId", employeeId.toString());
     formData.append("EmployeeName", employee.employeeName);
     formData.append("EmployeeAge", employee.employeeAge.toString());
@@ -112,5 +112,14 @@ export class ApiService {
   getBackendVersion(): Observable<{ version: string }> {
     return this.http.get<{ version: string }>(`${this.apiUrl}/api/version`);
   }
+  login(data: any): Observable<any> {
+    return this.http.post('http://localhost:5081/login', data, {withCredentials: true});
+  }
+
+
+  getAllUsers(): Observable<User[]> {
+    return this.http.get<User[]>(`${this.apiUrl}/GetAllUsers`);
+  }
+ 
   
 }

@@ -17,4 +17,8 @@ export class MenuComponent {
   goToDepartment() {
     this.router.navigate(['/department']); 
   }
+
+  goToUser() {
+    this.router.navigate(['/user']);
+  }
 }

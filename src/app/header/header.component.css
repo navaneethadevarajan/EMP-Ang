@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80px;
+  height: 100px;
   background: linear-gradient(135deg, #052068, #081865);
   color: #fff;
   font-family: Arial, sans-serif;
@@ -23,7 +23,28 @@
 }
 .header-version
 {
-margin-left:65% ;
-font-size: 14px;
+  margin-top: -45px;
+  margin-left:65% ;
+  font-size: 11px;
+}
+.styled-login-button {
+  padding: 8px 20px;
+  border: 2px solid #0a66c2;
+  background-color: white;
+  color: #0a66c2;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+.styled-login-button:hover {
+  background-color: #0a66c2;
+  color: white;
+}
+.logout-btn
+{
+  margin-left: -80px;
+  margin-top: 35px;
+}
